@@ -16,49 +16,91 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        // color: Colors.amber,
-        height: MediaQuery.of(context).size.height * 2,
-        margin: EdgeInsets.only(top: 23, left: 20, bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hello Nischal,", style: Appwidget.boldTextFeildStyle()),
-                Container(
-                  margin: EdgeInsets.only(right: 20),
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Icon(Icons.shopping_cart, color: Colors.white),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Text("Delicious Food", style: Appwidget.headlineTextFeildStyle()),
-            Text(
-              "Descover And Get Great Food",
-              style: Appwidget.lightTextFeildStyle(),
-            ),
-            SizedBox(height: 20),
-            Container(margin: EdgeInsets.only(right: 20), child: showItem()),
-
-            SizedBox(height: 30),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          // color: Colors.amber,
+          // height: MediaQuery.of(context).size.height * 2,
+          margin: EdgeInsets.only(top: 23, left: 20, bottom: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap:
-                        () => Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Details()),
+                  Text("Hello Nischal,", style: Appwidget.boldTextFeildStyle()),
+                  Container(
+                    margin: EdgeInsets.only(right: 20),
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Icon(Icons.shopping_cart, color: Colors.white),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Text("Delicious Food", style: Appwidget.headlineTextFeildStyle()),
+              Text(
+                "Descover And Get Great Food",
+                style: Appwidget.lightTextFeildStyle(),
+              ),
+              SizedBox(height: 20),
+              Container(margin: EdgeInsets.only(right: 20), child: showItem()),
+
+              SizedBox(height: 30),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap:
+                          () => Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Details()),
+                          ),
+                      child: Container(
+                        margin: EdgeInsets.all(4),
+                        child: Material(
+                          elevation: 8.0,
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            padding: EdgeInsets.all(15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  "images/salad2.jpg",
+                                  fit: BoxFit.cover,
+                                  height: 150,
+                                  width: 150,
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  "Veggie Taco Hash",
+                                  style: Appwidget.semiBoldTextFeildStyle(),
+                                ),
+                                SizedBox(height: 5),
+
+                                Text(
+                                  "Fresh And Healthy",
+                                  style: Appwidget.lightTextFeildStyle(),
+                                ),
+                                SizedBox(height: 5),
+
+                                Text(
+                                  "NPR250",
+                                  style: Appwidget.semiBoldTextFeildStyle(),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                    child: Container(
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    Container(
                       margin: EdgeInsets.all(4),
                       child: Material(
                         elevation: 8.0,
@@ -69,26 +111,26 @@ class _HomeState extends State<Home> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Image.asset(
-                                "images/salad2.jpg",
+                                "images/salad1.jpg",
                                 fit: BoxFit.cover,
                                 height: 150,
                                 width: 150,
                               ),
                               SizedBox(height: 5),
                               Text(
-                                "Veggie Taco Hash",
+                                "Mix Veg Salad",
                                 style: Appwidget.semiBoldTextFeildStyle(),
                               ),
                               SizedBox(height: 5),
 
                               Text(
-                                "Fresh And Healthy",
+                                "Spicy with Onion",
                                 style: Appwidget.lightTextFeildStyle(),
                               ),
                               SizedBox(height: 5),
 
                               Text(
-                                "NPR250",
+                                "NPR350",
                                 style: Appwidget.semiBoldTextFeildStyle(),
                               ),
                             ],
@@ -96,102 +138,63 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(width: 15),
-                  Container(
-                    margin: EdgeInsets.all(4),
-                    child: Material(
-                      elevation: 8.0,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        padding: EdgeInsets.all(15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "images/salad1.jpg",
-                              fit: BoxFit.cover,
-                              height: 150,
-                              width: 150,
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              "Mix Veg Salad",
-                              style: Appwidget.semiBoldTextFeildStyle(),
-                            ),
-                            SizedBox(height: 5),
-
-                            Text(
-                              "Spicy with Onion",
-                              style: Appwidget.lightTextFeildStyle(),
-                            ),
-                            SizedBox(height: 5),
-
-                            Text(
-                              "NPR350",
-                              style: Appwidget.semiBoldTextFeildStyle(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 30.0),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
-                margin: EdgeInsets.only(right: 10),
-                child: Material(
-                  elevation: 8.0,
-                  borderRadius: BorderRadius.circular(25),
-                  child: Container(
-                    padding: EdgeInsets.all(15.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          "images/salad2.jpg",
-                          height: 100,
-                          width: 100,
-                          fit: BoxFit.cover,
-                        ),
-                        SizedBox(width: 20.0),
-                        Column(
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width / 2,
-                              child: Text(
-                                "Mediterranean Chickpea Salad",
-                                style: Appwidget.semiBoldTextFeildStyle(),
+              SizedBox(height: 30.0),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Container(
+                  margin: EdgeInsets.only(right: 10),
+                  child: Material(
+                    elevation: 8.0,
+                    borderRadius: BorderRadius.circular(25),
+                    child: Container(
+                      padding: EdgeInsets.all(15.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            "images/salad2.jpg",
+                            height: 100,
+                            width: 100,
+                            fit: BoxFit.cover,
+                          ),
+                          SizedBox(width: 20.0),
+                          Column(
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 2,
+                                child: Text(
+                                  "Mediterranean Chickpea Salad",
+                                  style: Appwidget.semiBoldTextFeildStyle(),
+                                ),
                               ),
-                            ),
-                            SizedBox(height: 5.0),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width / 2,
-                              child: Text(
-                                "Honey Goot Change",
-                                style: Appwidget.lightTextFeildStyle(),
+                              SizedBox(height: 5.0),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 2,
+                                child: Text(
+                                  "Honey Goot Change",
+                                  style: Appwidget.lightTextFeildStyle(),
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width / 2,
-                              child: Text(
-                                "NPR 210",
-                                style: Appwidget.semiBoldTextFeildStyle(),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width / 2,
+                                child: Text(
+                                  "NPR 210",
+                                  style: Appwidget.semiBoldTextFeildStyle(),
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

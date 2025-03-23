@@ -57,7 +57,7 @@
 //   }
 // }
 
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/pages/home.dart';
 import 'package:fooddeliveryapp/pages/order.dart';
@@ -95,21 +95,20 @@ class _BottonnavState extends State<Bottonnav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
+      bottomNavigationBar: ConvexAppBar(
         height: 65,
-        backgroundColor: Colors.white,
-        color: const Color.fromARGB(255, 75, 32, 46),
-        animationDuration: Duration(milliseconds: 500),
+        backgroundColor: Colors.black,
+        color: Colors.white,
         onTap: (int index) {
           setState(() {
             currentTabIndex = index;
           });
         },
-        items: const [
-          Icon(Icons.home_outlined, color: Colors.white),
-          Icon(Icons.shopping_bag_outlined, color: Colors.white),
-          Icon(Icons.wallet_outlined, color: Colors.white),
-          Icon(Icons.person_2_outlined, color: Colors.white),
+        items: [
+          TabItem(icon: Icons.home, title: 'Home'),
+          TabItem(icon: Icons.shopping_bag_outlined, title: 'order'),
+          TabItem(icon: Icons.wallet, title: 'wallet'),
+          TabItem(icon: Icons.person_2_outlined, title: 'person'),
         ],
       ),
       body: pages[currentTabIndex],
